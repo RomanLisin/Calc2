@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc2", "Calc2\Calc2.csproj", "{4F52AB28-708B-4509-95DA-6DBE4F67FC72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalckWithSkobki", "CalckWithSkobki\CalckWithSkobki.csproj", "{546BEF22-DA5E-4789-B1DC-1421A2512BB2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F52AB28-708B-4509-95DA-6DBE4F67FC72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F52AB28-708B-4509-95DA-6DBE4F67FC72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F52AB28-708B-4509-95DA-6DBE4F67FC72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F52AB28-708B-4509-95DA-6DBE4F67FC72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{546BEF22-DA5E-4789-B1DC-1421A2512BB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{546BEF22-DA5E-4789-B1DC-1421A2512BB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{546BEF22-DA5E-4789-B1DC-1421A2512BB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{546BEF22-DA5E-4789-B1DC-1421A2512BB2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B763484-3C8F-4806-A278-7CE60FD8D1B9}
+	EndGlobalSection
+EndGlobal
