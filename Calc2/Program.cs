@@ -17,7 +17,7 @@ namespace Calc2
 			expression = "22+33*44-55/11";
             Console.WriteLine(expression);
 
-			//char[] delimetrs = new char[] { '+', '-', '*', '/' };
+			//char[] delimetrs = new char[] { '+', '/', '*', '/' };
 			string[] s_numbers = expression.Split('+', '-', '*', '/');
 			for(int i=0; i<s_numbers.Length; i++)  Console.Write(s_numbers[i]+"\t"); Console.WriteLine();
 			double[] numbers = new double[s_numbers.Length];
@@ -28,12 +28,32 @@ namespace Calc2
             }
             Console.WriteLine();
 
-			string[] operators = expression.Split('0', '1', '2', '3', '4', '5', '6', '7', '8', '9','0','0');
-			for (int i = 0; i < operators.Length; i++) Console.Write(operators[i]+"\t"); Console.WriteLine();
-			operators = operators.Where(val => val != "").ToArray();
-			for (int i = 0; i < operators.Length; i++) Console.Write(operators[i]+"\t"); Console.WriteLine();
+			string[] operators = expression.Split('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', '.');
+			//string[] operators = expression.Split(s_numbers, StringSplitOptions.RemoveEmptyEntries);
+			operators = operators.Where(val => val != "").ToArray(); // убирает пустые строки равносильно ( ..., StringSplitOptions.RemoveEmptyEntries)
+																	 // Where называется Linq - библиотека для работы с  контейнерами или коллекциями
+			for (int i = 0; i < operators.Length; i++)
+			{
+				Console.Write(operators[i] + "\t");
+			}
+			Console.WriteLine();
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			for (int i = 0; i < operators.Length; i++)
+			{
 
-			for(int i = 0;i < operators.Length; i++)
+				while (operators[i] == "*" || operators[i] == "/")
+				{
+					if (operators[i] == "*") numbers[i] *= numbers[i + 1];
+					if (operators[i] == "/") numbers[i] /= numbers[i + 1];
+					ShiftLeft(numbers, i + 1);
+					ShiftLeft(operators, i);
+
+				}
+			}
+			Print(numbers);
+			Print(operators);
+
+			for (int i = 0;i < operators.Length; i++)
 			{
 
 				while (operators[i]=="+" || operators[i] == "-")
@@ -47,8 +67,8 @@ namespace Calc2
 			}
 			Print(numbers);
 			Print(operators);
-
-        }
+			//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		}
 		static void Print(double[] arr)
 		{
 			for (int i=0; i<arr.Length; i++)
