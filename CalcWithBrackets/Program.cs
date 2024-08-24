@@ -37,7 +37,7 @@ namespace Calc2
 								Calculate(expression.Substring(i + 1, j - i - 1)).ToString()//в Calculate() передаём выражение без скобок
 								);
 							Program.expression = expression;
-
+							break;
 						}
 						if (expression[j] == '(')
 						{
@@ -47,6 +47,8 @@ namespace Calc2
 					}
 				}
 			}
+			// После того, как все скобки обработаны, оставшееся выражение тоже нужно вычислить
+			Program.expression = Calculate(expression).ToString();
 		}
 		static double Calculate(string expression)
 		{
